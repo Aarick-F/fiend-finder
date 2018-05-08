@@ -1,7 +1,78 @@
 body {
-  background: #000;
+  background: #eee;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  width: 100%;
 }
 
-h1 {
-  color: #FFF;
+.container {
+  width: 80%;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+#myHeader {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#myHeader h1 {
+  font-size: 2.5em;
+  font-weight: bold;
+  padding: 10px 0;
+}
+
+#myHeader h2 {
+  font-size: 1.25em;
+  font-weight: bold;
+  font-style: italic;
+}
+
+#fiend {
+  color: rgb(255, 100, 100);
+  text-transform: uppercase;
+}
+
+#frontDisplay {
+  width: 100%;
+  flex: 1;
+  display: flex;
+  justify-content: space-around;
+}
+
+.displayItem {
+  width: 40%;
+  display: flex;
+  align-items: center;
+  margin: 20px;
+  font-size: 4em;
+}
+
+#buttonArea {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+#begin {
+  width: 15%;
+}
+
+#myFooter {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#myFooter a {
+  padding: 10px 0;
 }
