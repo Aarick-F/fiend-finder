@@ -1,0 +1,26 @@
+{
+  "name": "fiend-finder",
+  "version": "1.0.0",
+  "description": "App designed to pair you up with a demon",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "watch": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Aarick-F/fiend-finder.git"
+  },
+  "author": "Aarick-F",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Aarick-F/fiend-finder/issues"
+  },
+  "homepage": "https://github.com/Aarick-F/fiend-finder#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "dotenv": "^5.0.1",
+    "express": "^4.16.3"
+  }
+}
