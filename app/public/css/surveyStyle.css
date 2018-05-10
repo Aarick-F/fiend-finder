@@ -28,6 +28,10 @@ body {
   padding: 10px 0;
 }
 
+#brand {
+  color: #222;
+}
+
 #fiend {
   color: rgb(255, 100, 100);
   text-transform: uppercase;

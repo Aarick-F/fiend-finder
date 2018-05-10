@@ -1,6 +1,7 @@
 $(document).ready(() => {
 
-  $("#submit").on("click", () => {
+  $("#submit").on("click", (e) => {
+    e.preventDefault();
     let answersArray = [];
     
     let a1 = $("#question-one")["0"].selectedOptions["0"].value;
@@ -15,13 +16,20 @@ $(document).ready(() => {
     let a10 = $("#question-ten")["0"].selectedOptions["0"].value;
     
     answersArray.push(a1, a2, a3, a4, a5, a6, a7, a8, a9, a10);
+
     
     let name = $("#name").val().trim();
     let photo = $("#photo").val().trim();
     
-    let newFiend = new Fiend(name, image, answersArray);
+    let newFiend = new Fiend(name, photo, answersArray);
+
+    $.post("/api/fiends", newFiend, data => {
+        if(!data) {
+          alert("Something horrible has happened.");
+        }
+    });
     
-    console.log(newFiend);
+    // console.log(newFiend);
   });
   
   class Fiend {
