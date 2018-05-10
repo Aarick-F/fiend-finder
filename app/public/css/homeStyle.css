@@ -32,6 +32,7 @@ body {
   font-size: 1.25em;
   font-weight: bold;
   font-style: italic;
+  margin-bottom: 20px;
 }
 
 #fiend {
@@ -45,7 +46,7 @@ body {
   display: flex;
   justify-content: space-around;
   background: rgba(255, 100, 100, 0.7);
-  box-shadow: 2px 2px 0px #222;
+  /*box-shadow: 2px 2px 0px #222;*/
 }
 
 .displayItem {
@@ -63,12 +64,14 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 30px;
-  margin-top: 20px;
+  background: rgba(255, 100, 100, 0.7);
+  /*margin-bottom: 30px;*/
+  /*margin-top: 20px;*/
 }
 
 #begin {
   width: 15%;
+  margin: 20px 0;
 }
 
 #myFooter {
