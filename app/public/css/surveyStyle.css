@@ -33,6 +33,12 @@ body {
   text-transform: uppercase;
 }
 
+#aboutMe {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
 #formBox {
   width: 70%;
   flex: 1;
