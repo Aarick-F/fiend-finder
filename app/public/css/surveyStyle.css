@@ -12,13 +12,13 @@ body {
   flex: 1;
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
 #myHeader {
-  width: 100%;
+  width: 70%;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
 }
 
@@ -28,42 +28,32 @@ body {
   padding: 10px 0;
 }
 
-#myHeader h2 {
-  font-size: 1.25em;
-  font-weight: bold;
-  font-style: italic;
-}
-
 #fiend {
   color: rgb(255, 100, 100);
   text-transform: uppercase;
 }
 
-#frontDisplay {
-  width: 100%;
+#formBox {
+  width: 70%;
   flex: 1;
   display: flex;
-  justify-content: space-around;
+  flex-direction: column;
+  background: rgba(255, 100, 100, 0.7);
+  box-shadow: 2px 2px 0px #222;
 }
 
-.displayItem {
-  width: 40%;
-  display: flex;
-  align-items: center;
-  margin: 20px;
-  font-size: 4em;
+#formHead {
+  font-size: 2em;
+  color: #eee;
+  text-shadow: 1px 1px 0px #222;
+  padding: 20px;
 }
 
-#buttonArea {
+#buttonHouse {
   width: 100%;
   display: flex;
   justify-content: center;
-  align-items: center;
-  margin-bottom: 30px;
-}
-
-#begin {
-  width: 15%;
+  margin: 20px 0;
 }
 
 #myFooter {
@@ -75,4 +65,14 @@ body {
 
 #myFooter a {
   padding: 10px 0;
+}
+
+.field {
+  margin: 20px;
+}
+
+.label {
+  color: #eee;
+  text-shadow: 1px 1px 0px #222;
+  font-size: 1.3em;
 }
