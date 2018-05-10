@@ -17,7 +17,7 @@ $(document).ready(() => {
     answersArray.push(a1, a2, a3, a4, a5, a6, a7, a8, a9, a10);
     
     let name = $("#name").val().trim();
-    let image = $("#image").val().trim();
+    let photo = $("#photo").val().trim();
     
     let newFiend = new Fiend(name, image, answersArray);
     
@@ -25,10 +25,10 @@ $(document).ready(() => {
   });
   
   class Fiend {
-    constructor(name, image, answers) {
+    constructor(name, photo, scores) {
       this.name = name;
-      this.image = image;
-      this.answers = answers;
+      this.photo = photo;
+      this.scores = scores;
     }
   }
 
