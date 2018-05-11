@@ -13,7 +13,8 @@ let fiendArray = [
       "1",
       "1",
       "1"
-    ]
+    ],
+    "matchLevel": 0
   },
   {
     "name": "Lilith",
@@ -29,7 +30,8 @@ let fiendArray = [
       "2",
       "3",
       "5"
-    ]
+    ],
+    "matchLevel": 0
   },
   {
     "name": "Succubus",
@@ -45,7 +47,8 @@ let fiendArray = [
       "2",
       "3",
       "1"
-    ]
+    ],
+    "matchLevel": 0
   },
   {
     "name": "Mooseboi",
@@ -61,7 +64,8 @@ let fiendArray = [
       "2",
       "5",
       "5"
-    ]
+    ],
+    "matchLevel": 0
   },
   {
     "name": "Greg",
@@ -77,7 +81,8 @@ let fiendArray = [
       "1",
       "1",
       "1"
-    ]
+    ],
+    "matchLevel": 0
   }
 ];
 

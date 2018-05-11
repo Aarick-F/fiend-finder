@@ -1,7 +1,12 @@
 $(document).ready(() => {
 
+  let newFiend, matchedFiend, fiendArray;
+
+
   $("#submit").on("click", (e) => {
     e.preventDefault();
+    fiendArray = [];
+    getData();
     let answersArray = [];
     
     let a1 = $("#question-one")["0"].selectedOptions["0"].value;
@@ -21,15 +26,14 @@ $(document).ready(() => {
     let name = $("#name").val().trim();
     let photo = $("#photo").val().trim();
     
-    let newFiend = new Fiend(name, photo, answersArray);
+    newFiend = new Fiend(name, photo, answersArray);
 
     $.post("/api/fiends", newFiend, data => {
         if(!data) {
           alert("Something horrible has happened.");
         }
     });
-    
-    // console.log(newFiend);
+
   });
   
   class Fiend {
@@ -37,7 +41,42 @@ $(document).ready(() => {
       this.name = name;
       this.photo = photo;
       this.scores = scores;
+      this.matchLevel = 0;
     }
+  }
+
+  findMatch = (fiendArr) => {
+    let resultsArr = [];
+    fiendArr.pop();
+    console.log(fiendArr);
+    for(let i = 0; i < fiendArray.length; i++) {
+      let individualResults = [];
+      for(let j = 0; j < fiendArray[i].scores.length; j++) {
+        if(parseInt(fiendArray[i].scores[j]) >= parseInt(newFiend.scores[j])) {
+          let difference = parseInt(fiendArray[i].scores[j]) - parseInt(newFiend.scores[j]);
+          individualResults.push(difference);
+        } else {
+          let difference = parseInt(newFiend.scores[j]) - parseInt(fiendArray[i].scores[j]);
+          individualResults.push(difference);
+        }
+      }
+      resultsArr.push(individualResults);
+    }
+    console.log(resultsArr);
+    for(let i = 0; i < resultsArr.length; i++) {
+      fiendArray[i].matchLevel = resultsArr[i].reduce((a, b) => {
+        return a + b;
+      });
+    }
+    console.log(fiendArray);
+    // NOW THE FIEND LIST IS UPDATED, JUST NEED TO GO THROUGH IT AND FIND THE LOWEST MATCHLEVEL
+  }
+
+  getData = () => {
+    $.get("/api/fiends", (data) => {
+      fiendArray = data;
+      findMatch(fiendArray);
+    });
   }
 
 });
