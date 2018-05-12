@@ -84,3 +84,15 @@ body {
 #myFooter a {
   padding: 10px 0;
 }
+
+@media screen and (max-width: 1025px) {
+  .container {
+    width: 90%;
+  }
+  .displayItem {
+    font-size: 1.5em;
+  }
+  #begin {
+    width: 50%;
+  }
+}

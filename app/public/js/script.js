@@ -3,6 +3,8 @@ $(document).ready(() => {
   let newFiend, matchedFiend, fiendArray;
 
 
+  // EVENT LISTENER
+
   $("#submit").on("click", (e) => {
     e.preventDefault();
     fiendArray = [];
@@ -35,7 +37,9 @@ $(document).ready(() => {
     });
 
   });
-  
+
+  // OBJECT CLASS
+
   class Fiend {
     constructor(name, photo, scores) {
       this.name = name;
@@ -45,10 +49,12 @@ $(document).ready(() => {
     }
   }
 
+  // FUNCTIONS
+
   findMatch = (fiendArr) => {
     let resultsArr = [];
     fiendArr.pop();
-    console.log(fiendArr);
+
     for(let i = 0; i < fiendArray.length; i++) {
       let individualResults = [];
       for(let j = 0; j < fiendArray[i].scores.length; j++) {
@@ -69,7 +75,16 @@ $(document).ready(() => {
       });
     }
     console.log(fiendArray);
-    // NOW THE FIEND LIST IS UPDATED, JUST NEED TO GO THROUGH IT AND FIND THE LOWEST MATCHLEVEL
+    let matchLevelArr = [];
+    fiendArray.forEach(fiend => {
+      matchLevelArr.push(fiend.matchLevel);
+    });
+    let closestMatch = getMin(matchLevelArr);
+    matchedFiend = fiendArray[matchLevelArr.indexOf(closestMatch)];
+    console.log(`NEW FIEND: ${newFiend}
+      MATCHED FIEND: ${matchedFiend}`);
+
+    buildModal(newFiend, matchedFiend);
   }
 
   getData = () => {
@@ -77,6 +92,24 @@ $(document).ready(() => {
       fiendArray = data;
       findMatch(fiendArray);
     });
+  }
+
+  getMin = (arr) => {
+    return arr.reduce((p, v) => {
+      return (p < v ? p : v);
+    });
+  }
+
+  buildModal = (user, match) => {
+    let pictureBox = $("<div id='pictureBox'>");
+    if(user.photo.length > 0) {
+      pictureBox.append("<img class='picture' src='" + user.photo + "'>");
+    }
+    pictureBox.append("<img class='picture' src='" + match.photo + "'>");
+    let message = $("<h1 id='message'>Congratulations " + user.name +
+                  ", you've been matched with " + match.name + "!</h1>");
+    $("#resultsWindow").append(pictureBox, message);
+    $(".modal").addClass("is-active");
   }
 
 });
